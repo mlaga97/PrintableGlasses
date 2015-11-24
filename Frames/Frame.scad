@@ -1,10 +1,10 @@
 module lens() {
 	intersection() {
-		linear_extrude( 15 )
+		linear_extrude(height=15)
 			import("LeftLensFrontView.dxf",$fn=250);
 		translate([0,20,5])
 			rotate( [90,0,0] )
-				linear_extrude(50)
+				linear_extrude(height=50)
 					import("LeftLensTopView.dxf",$fn=250);
 	}
 }
@@ -12,10 +12,10 @@ module lens() {
 module lens_case() {
 	difference() {
 		translate([3,0.75,1])
-			linear_extrude(10)
+			linear_extrude(height=10)
 				scale([1.1,1.15,1])
 					import("LeftLensFrontView.dxf",$fn=250);
-		linear_extrude(15)
+		linear_extrude(height=15)
 			scale([0.97,0.95,0.97])
 				import("LeftLensFrontView.dxf",$fn=250);	
 	}

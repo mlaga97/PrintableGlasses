@@ -61,9 +61,9 @@ module nosepiece() {
 module bridge() {
 	difference() {
 		union() {
-			translate([1,4,6])
+			translate([0,4,6])
 				cube([22,4,10],center=true);
-			translate([1,6,6])
+			translate([0,6,6])
 				cube([26.5,2,10],center=true);
 		}
 

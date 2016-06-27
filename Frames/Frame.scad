@@ -30,8 +30,8 @@ module lens_assembly() {
 		}
 		union() {
 			translate([1.5,0.2,-0.5])
-				scale([1.025,1.025,1.05])
-					lens();
+				scale([1.05,1.05,1.05]) // Line to change
+					#lens();
 			translate([-59.5,-0.5,-0.1])
 				cube([13,1,15]);
 			translate([-55.5,10,6])

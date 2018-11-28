@@ -1,11 +1,11 @@
 module lens() {
 	intersection() {
 		linear_extrude(height=15)
-			import("LeftLensFrontView.dxf",$fn=250);
-		translate([0,20,5])
+			import("Jamall/LeftLensFrontView.dxf",$fn=250);
+		translate([0,20,3.5])
 			rotate( [90,0,0] )
 				linear_extrude(height=50)
-					import("LeftLensTopView.dxf",$fn=250);
+					import("Jamall/LeftLensTopView.dxf",$fn=250);
 	}
 }
 
@@ -14,10 +14,10 @@ module lens_case() {
 		translate([3,0.75,1])
 			linear_extrude(height=10)
 				scale([1.1,1.15,1])
-					import("LeftLensFrontView.dxf",$fn=250);
+					import("Jamall/LeftLensFrontView.dxf",$fn=250);
 		linear_extrude(height=15)
 			scale([0.97,0.95,0.97])
-				import("LeftLensFrontView.dxf",$fn=250);	
+				import("Jamall/LeftLensFrontView.dxf",$fn=250);	
 	}
 }
 
@@ -25,16 +25,16 @@ module lens_assembly() {
 	difference() {
 		union() {
 			lens_case();
-			translate([-59,-3.5,1])
+			translate([-59+1.5-3.5,-3.5,1])
 				cube([9,7,10]);
 		}
 		union() {
 			translate([1.5,0.2,-0.5])
 				scale([1.05,1.05,1.05]) // Line to change
 					#lens();
-			translate([-59.5,-0.5,-0.1])
+			translate([-59.5+1.5-3.5,-0.5,-0.1])
 				cube([13,1,15]);
-			translate([-55.5,10,6])
+			translate([-55.5+1.5-3.5,10,6])
 				rotate([90,0,0])
 					cylinder(r=1.5,h=25,$fn=24);
 		}
@@ -62,9 +62,9 @@ module bridge() {
 	difference() {
 		union() {
 			translate([0,4,6])
-				cube([22,4,10],center=true);
+				cube([24,4,10],center=true);
 			translate([0,6,6])
-				cube([26.5,2,10],center=true);
+				cube([29,2,10],center=true);
 		}
 
 		union() {
